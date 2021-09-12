@@ -24,7 +24,7 @@ namespace ExampleSQLApp
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -85,12 +85,21 @@ namespace ExampleSQLApp
 
             if(table.Rows.Count > 0)
             {
-                MessageBox.Show("Успешно!");
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
             }
             else
             {
                 MessageBox.Show("Не верные данные!");
             }
+        }
+
+        private void RegisterLable_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
         }
     }
 }
